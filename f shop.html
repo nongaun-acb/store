@@ -1,0 +1,1473 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>F Shop – ช้อปครบ จบในที่เดียว</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ===== ธีมสี: ส้ม(Shopee) ฟ้า(Lazada) กรมท่า(Amazon) ดำ+ชมพู(TikTok) ===== */
+      :root {
+        --o: #ee4d2d;
+        --b: #1565c0;
+        --n: #131a22;
+        --bg: #f3f4f6;
+        --c: #fff;
+        --t: #1f2937;
+        --m: #6b7280;
+        --l: #e5e7eb;
+        box-sizing: border-box;
+        padding: env(safe-area-inset-top, 0px) 0
+          env(safe-area-inset-bottom, 0px);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg: #0e1116;
+          --c: #1a1f27;
+          --t: #e8eaed;
+          --m: #9aa3af;
+          --l: #2d343f;
+        }
+      }
+      :root[data-theme="dark"] {
+        --bg: #0e1116;
+        --c: #1a1f27;
+        --t: #e8eaed;
+        --m: #9aa3af;
+        --l: #2d343f;
+      }
+      html {
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font:
+          15px/1.5 "Noto Sans Thai",
+          system-ui,
+          sans-serif;
+        background: var(--bg);
+        color: var(--t);
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0 0 auto;
+        height: env(safe-area-inset-top, 0px);
+        z-index: 10;
+        background: var(--o);
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+        color: inherit;
+      }
+      .w {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 12px;
+      }
+      header {
+        position: sticky;
+        top: env(safe-area-inset-top, 0px);
+        z-index: 9;
+        background: linear-gradient(90deg, #ee4d2d, #ff7a3d);
+        color: #fff;
+      }
+      .hd {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 0;
+        flex-wrap: wrap;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        font-size: 22px;
+        cursor: pointer;
+      }
+      .lg {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 11px;
+        background: #fff;
+        color: var(--o);
+        font-weight: 800;
+        font-size: 25px;
+        line-height: 1;
+        transform: rotate(-6deg);
+        box-shadow: 0 2px 0 #ffd54f;
+      }
+      .lg::after {
+        content: "";
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--b);
+      }
+      .sr {
+        flex: 1;
+        min-width: 200px;
+        display: flex;
+      }
+      .sr input {
+        border: 0;
+        border-radius: 6px 0 0 6px;
+        background: #fff;
+        color: #222;
+      }
+      .sr button {
+        border: 0;
+        background: var(--n);
+        color: #fff;
+        padding: 0 16px;
+        border-radius: 0 6px 6px 0;
+        cursor: pointer;
+      }
+      .ib {
+        background: none;
+        border: 0;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        padding: 6px;
+      }
+      .bd {
+        position: absolute;
+        top: -2px;
+        right: -4px;
+        background: var(--b);
+        border-radius: 9px;
+        font-size: 11px;
+        padding: 0 5px;
+      }
+      nav {
+        background: var(--n);
+        color: #fff;
+        font-size: 13px;
+      }
+      nav .w {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        white-space: nowrap;
+      }
+      nav a {
+        cursor: pointer;
+        opacity: 0.9;
+      }
+      .g {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 10px;
+      }
+      .cd {
+        background: var(--c);
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        border: 1px solid var(--l);
+      }
+      .im {
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        font-size: 64px;
+        background: var(--h);
+      }
+      .cd .p {
+        padding: 8px;
+      }
+      .nm {
+        font-size: 13px;
+        height: 40px;
+        overflow: hidden;
+      }
+      .pr {
+        color: var(--o);
+        font-weight: 700;
+        font-size: 17px;
+      }
+      .old {
+        color: var(--m);
+        text-decoration: line-through;
+        font-size: 12px;
+        margin-left: 4px;
+      }
+      .sm {
+        font-size: 12px;
+        color: var(--m);
+      }
+      .tag {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        background: #ffd54f;
+        color: #b3261e;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 1px 6px;
+        border-radius: 4px;
+      }
+      .hb {
+        position: absolute;
+        top: 4px;
+        right: 6px;
+        background: #fff9;
+        border: 0;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .btn {
+        border: 0;
+        border-radius: 6px;
+        padding: 9px 14px;
+        cursor: pointer;
+        background: var(--o);
+        color: #fff;
+        font-weight: 600;
+      }
+      .btn.b {
+        background: var(--b);
+      }
+      .btn.g2 {
+        background: var(--l);
+        color: var(--t);
+      }
+      .btn.s {
+        padding: 4px 9px;
+        font-size: 13px;
+      }
+      .box {
+        background: var(--c);
+        border: 1px solid var(--l);
+        border-radius: 8px;
+        padding: 14px;
+        margin: 12px 0;
+      }
+      h2 {
+        font-size: 18px;
+        margin: 16px 0 8px;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 10px;
+        margin-top: 12px;
+      }
+      .bn {
+        border-radius: 10px;
+        padding: 22px;
+        color: #fff;
+        min-height: 140px;
+      }
+      .cats {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 8px;
+      }
+      .ct {
+        background: var(--c);
+        border-top: 3px solid var(--b);
+        border-radius: 8px;
+        text-align: center;
+        padding: 10px 4px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .ct span {
+        display: block;
+        font-size: 30px;
+      }
+      .tk {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 6px;
+      }
+      .v {
+        flex: 0 0 136px;
+        aspect-ratio: 9/14;
+        border-radius: 10px;
+        color: #fff;
+        position: relative;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        font-size: 56px;
+      }
+      .v small {
+        position: absolute;
+        bottom: 6px;
+        left: 8px;
+        right: 8px;
+        font-size: 11px;
+        line-height: 1.3;
+      }
+      .v i {
+        position: absolute;
+        top: 6px;
+        left: 8px;
+        font-size: 11px;
+        font-style: normal;
+        background: #fe2c55;
+        padding: 0 6px;
+        border-radius: 4px;
+      }
+      .cdn {
+        background: var(--n);
+        color: #fff;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 14px;
+        margin-left: 6px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+      td,
+      th {
+        padding: 6px;
+        border-bottom: 1px solid var(--l);
+        text-align: left;
+      }
+      .tb {
+        overflow-x: auto;
+      }
+      .row {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .fl {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      input,
+      select,
+      textarea {
+        background: var(--c);
+        border: 1px solid var(--l);
+        border-radius: 6px;
+        padding: 8px;
+        width: 100%;
+      }
+      .ov {
+        position: fixed;
+        inset: 0;
+        background: #0008;
+        display: grid;
+        place-items: center;
+        z-index: 20;
+        padding: 12px;
+      }
+      .ov .box {
+        width: 100%;
+        max-width: 440px;
+        max-height: 90vh;
+        overflow: auto;
+      }
+      .ov label {
+        display: block;
+        margin-top: 8px;
+      }
+      .pd {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      #toast {
+        position: fixed;
+        bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--n);
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 20px;
+        z-index: 30;
+        display: none;
+      }
+      .im img,
+      .sl img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .sl {
+        display: grid;
+        place-items: center;
+        width: 64px;
+        height: 64px;
+        border-radius: 14px;
+        background: #fff;
+        color: #222;
+        font-size: 36px;
+        overflow: hidden;
+        flex: none;
+        border: 1px solid var(--l);
+      }
+      .sl.m {
+        width: 44px;
+        height: 44px;
+        font-size: 26px;
+      }
+      .ct .sl {
+        margin: 0 auto;
+      }
+      @media (max-width: 700px) {
+        .hero,
+        .pd {
+          grid-template-columns: 1fr;
+        }
+        .im {
+          font-size: 52px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="w">
+        <div class="hd">
+          <div class="logo" onclick="go('home')" aria-label="F Shop">
+            <span class="lg">F</span><span>Shop</span>
+          </div>
+          <div class="sr">
+            <input
+              id="q"
+              placeholder="ค้นหาสินค้า เช่น หูฟัง เสื้อ กาแฟ"
+              onkeydown="event.key == 'Enter' && sch()"
+            /><button onclick="sch()">🔍</button>
+          </div>
+          <button class="ib" onclick="go('fav')">❤️ ที่ชอบ</button>
+          <button class="ib" onclick="go('cart')">
+            🛒 ตะกร้า<span class="bd" id="cb">0</span>
+          </button>
+          <button
+            class="ib"
+            id="us"
+            onclick="go(S.me ? 'orders' : 'login')"
+          ></button>
+        </div>
+      </div>
+      <nav><div class="w" id="nv"></div></nav>
+    </header>
+    <main id="app"></main>
+    <footer
+      class="w"
+      style="
+        text-align: center;
+        color: var(--m);
+        font-size: 12px;
+        padding: 24px 0;
+      "
+    >
+      © F Shop · เว็บไซต์จำลองเพื่อการศึกษา ไม่มีการซื้อขายจริง
+    </footer>
+    <div id="toast"></div>
+    <script>
+      // ===== 1) ข้อมูลตัวอย่าง =====
+      const CATS = [
+        { id: "phone", n: "มือถือและแกดเจ็ต", i: "📱" },
+        { id: "fashion", n: "แฟชั่น", i: "👕" },
+        { id: "home", n: "บ้านและครัว", i: "🏠" },
+        { id: "beauty", n: "ความงาม", i: "💄" },
+        { id: "food", n: "อาหารและของกิน", i: "🍜" },
+        { id: "sport", n: "กีฬา", i: "🏃" },
+      ];
+      const P0 = [
+        [
+          1,
+          "สมาร์ทโฟน Nova X5 5G 128GB",
+          "phone",
+          7990,
+          9990,
+          40,
+          1280,
+          4.7,
+          "📱",
+        ],
+        [
+          2,
+          "หูฟังบลูทูธ AirBeat ตัดเสียงรบกวน",
+          "phone",
+          1290,
+          1990,
+          120,
+          3560,
+          4.6,
+          "🎧",
+        ],
+        [3, "สมาร์ทวอทช์ FitPro 2", "phone", 1590, 2490, 60, 2100, 4.5, "⌚"],
+        [
+          4,
+          "พาวเวอร์แบงค์ 20000mAh ชาร์จเร็ว",
+          "phone",
+          590,
+          890,
+          200,
+          5400,
+          4.8,
+          "🔋",
+        ],
+        [
+          5,
+          "เสื้อยืดคอตตอน 100% ทรงโอเวอร์ไซซ์",
+          "fashion",
+          199,
+          349,
+          300,
+          8900,
+          4.6,
+          "👕",
+        ],
+        [
+          6,
+          "กางเกงยีนส์ทรงตรง ผ้ายืด",
+          "fashion",
+          459,
+          690,
+          90,
+          1500,
+          4.4,
+          "👖",
+        ],
+        [
+          7,
+          "รองเท้าผ้าใบ Street Run",
+          "fashion",
+          890,
+          1490,
+          70,
+          2750,
+          4.7,
+          "👟",
+        ],
+        [
+          8,
+          "กระเป๋าสะพายข้างหนัง PU",
+          "fashion",
+          390,
+          590,
+          80,
+          1980,
+          4.5,
+          "👜",
+        ],
+        [
+          9,
+          "หม้อทอดไร้น้ำมัน 5.5 ลิตร",
+          "home",
+          1490,
+          2290,
+          50,
+          4300,
+          4.8,
+          "🍳",
+        ],
+        [
+          10,
+          "เครื่องดูดฝุ่นไร้สาย แรงดูดสูง",
+          "home",
+          2490,
+          3990,
+          30,
+          860,
+          4.6,
+          "🧹",
+        ],
+        [11, "ชุดผ้าปูที่นอน 6 ฟุต", "home", 690, 990, 65, 1230, 4.5, "🛏️"],
+        [
+          12,
+          "แก้วเก็บความเย็น 900 มล.",
+          "home",
+          259,
+          399,
+          150,
+          6700,
+          4.9,
+          "🥤",
+        ],
+        [13, "ลิปทินท์เนื้อแมท", "beauty", 149, 259, 250, 9900, 4.7, "💄"],
+        [
+          14,
+          "เซรั่มวิตามินซี 30 มล.",
+          "beauty",
+          359,
+          590,
+          110,
+          5200,
+          4.8,
+          "🧴",
+        ],
+        [
+          15,
+          "ครีมกันแดด SPF50+ PA++++",
+          "beauty",
+          229,
+          349,
+          180,
+          7300,
+          4.7,
+          "☀️",
+        ],
+        [16, "พาเลตต์อายแชโดว์ 12 สี", "beauty", 299, 499, 95, 2400, 4.5, "🎨"],
+        [
+          17,
+          "กาแฟสำเร็จรูป 3in1 แพ็ค 50 ซอง",
+          "food",
+          169,
+          229,
+          400,
+          6100,
+          4.6,
+          "☕",
+        ],
+        [18, "มะม่วงน้ำดอกไม้อบแห้ง", "food", 89, 129, 500, 4800, 4.8, "🥭"],
+        [19, "ชุดน้ำพริกแกงใต้ 5 รส", "food", 199, 279, 120, 1700, 4.7, "🌶️"],
+        [20, "ขนมทองม้วนกรอบ", "food", 79, 109, 350, 3900, 4.6, "🍘"],
+        [21, "เสื่อโยคะกันลื่น 6 มม.", "sport", 349, 590, 100, 2900, 4.6, "🧘"],
+        [
+          22,
+          "ดัมเบลปรับน้ำหนัก 20 กก.",
+          "sport",
+          1290,
+          1890,
+          40,
+          760,
+          4.5,
+          "🏋️",
+        ],
+        [
+          23,
+          "ลูกฟุตบอลหนังเย็บ เบอร์ 5",
+          "sport",
+          490,
+          750,
+          60,
+          940,
+          4.4,
+          "⚽",
+        ],
+        [24, "จักรยานพับได้ 20 นิ้ว", "sport", 5990, 7990, 12, 210, 4.7, "🚲"],
+      ].map(([id, n, c, p, o, s, d, r, e]) => ({ id, n, c, p, o, s, d, r, e }));
+      // ===== ข้อมูล Marketplace: ร้านค้า ผู้ขาย บัญชีสาธิต =====
+      const SH0 = [
+        {
+          id: "sh1",
+          o: "s1@fshop.th",
+          n: "ไอทีเฮ้าส์",
+          ds: "ร้านแกดเจ็ตและอุปกรณ์ไอที ของแท้ รับประกันทุกชิ้น ส่งไวภายใน 24 ชั่วโมง",
+          ic: "🎧",
+          st: "active",
+        },
+        {
+          id: "sh2",
+          o: "s2@fshop.th",
+          n: "แฟชั่นบิวตี้สตูดิโอ",
+          ds: "เสื้อผ้า กระเป๋า และเครื่องสำอางที่คัดมาเพื่อคุณ ราคาน่ารัก",
+          ic: "👗",
+          st: "active",
+        },
+        {
+          id: "sh3",
+          o: "s3@fshop.th",
+          n: "บ้านสวนของกินดี",
+          ds: "ของใช้ในบ้าน ของกินคุณภาพ และอุปกรณ์กีฬา คัดเองทุกชิ้น",
+          ic: "🏡",
+          st: "active",
+        },
+      ];
+      const SL0 = SH0.map((s) => ({ e: s.o, sh: s.id }));
+      const DU = [
+        { e: "c@fshop.th", p: "1234", n: "ลูกค้าตัวอย่าง", r: "customer" },
+        { e: "s1@fshop.th", p: "1234", n: "คุณสมชาย", r: "seller" },
+        { e: "s2@fshop.th", p: "1234", n: "คุณมะลิ", r: "seller" },
+        { e: "s3@fshop.th", p: "1234", n: "คุณวิชัย", r: "seller" },
+      ];
+      const DM = [
+        "c@fshop.th",
+        "s1@fshop.th",
+        "s2@fshop.th",
+        "s3@fshop.th",
+        "admin@fshop.th",
+      ];
+      const RL = { customer: "ลูกค้า", seller: "ผู้ขาย", admin: "ผู้ดูแลระบบ" };
+      const ST = [
+        "รอชำระเงิน",
+        "กำลังจัดเตรียม",
+        "จัดส่งแล้ว",
+        "สำเร็จ",
+        "ยกเลิก",
+      ];
+
+      // ===== 2) สถานะและ LocalStorage =====
+      const $ = (s) => document.querySelector(s);
+      const ls = (k, d) => {
+        try {
+          return JSON.parse(localStorage.getItem("ms_" + k)) ?? d;
+        } catch (e) {
+          return d;
+        }
+      };
+      const S = {
+        P: ls("P", P0),
+        C: ls("C", CATS),
+        cart: ls("cart", {}),
+        fav: ls("fav", []),
+        U: ls("U", [
+          { e: "admin@fshop.th", p: "admin123", n: "ผู้ดูแลระบบ", a: 1 },
+        ]),
+        me: ls("me", null),
+        O: ls("O", []),
+        SH: ls("SH", []),
+        SL: ls("SL", []),
+      };
+      const mg = (e) => e && e.replace("@multishop.th", "@fshop.th");
+      S.U.forEach((u) => (u.e = mg(u.e)));
+      if (S.me) S.me.e = mg(S.me.e);
+      S.O.forEach((o) => (o.u = mg(o.u)));
+      // ย้ายข้อมูลเดิมเข้าโครงสร้าง Marketplace (ไม่ลบข้อมูลเดิม)
+      DU.forEach((d) => S.U.some((u) => u.e == d.e) || S.U.push(d));
+      S.U.forEach((u) => (u.r = u.r || (u.a ? "admin" : "customer")));
+      if (S.me) S.me.r = S.me.r || (S.me.a ? "admin" : "customer");
+      SH0.forEach((s) => S.SH.some((x) => x.id == s.id) || S.SH.push(s));
+      SL0.forEach((l) => S.SL.some((x) => x.sh == l.sh) || S.SL.push(l));
+      S.P.forEach(
+        (p) =>
+          (p.sh =
+            p.sh ||
+            {
+              fashion: "sh2",
+              beauty: "sh2",
+              home: "sh3",
+              food: "sh3",
+              sport: "sh3",
+            }[p.c] ||
+            "sh1"),
+      );
+      S.O.forEach((o) => {
+        o.sh = o.sh || S.P.find((p) => p.id == o.it[0]?.id)?.sh || "sh1";
+        o.s = o.s ?? o.t;
+      });
+      const sv = () => {
+        try {
+          for (const k in S)
+            localStorage.setItem("ms_" + k, JSON.stringify(S[k]));
+        } catch (e) {
+          T("พื้นที่จัดเก็บเต็ม ลองใช้รูปที่เล็กลง");
+        }
+      };
+      const F = { q: "", s: "pop", min: "", max: "", r: 0 };
+      let reg = 0,
+        AT = "stat",
+        SA = "ov";
+
+      // ===== 3) ฟังก์ชันช่วย =====
+      const B = (n) => "฿" + Number(n).toLocaleString("th-TH");
+      const E = (s) =>
+        String(s ?? "").replace(
+          /[&<>"']/g,
+          (c) => "&#" + c.charCodeAt(0) + ";",
+        );
+      const cg = (id) =>
+        S.C.find((c) => c.id == id) || { n: "อื่น ๆ", i: "🛍️" };
+      const P = (id) => S.P.find((p) => p.id == id);
+      const hue = (id) => `--h:hsl(${(id * 47) % 360} 85% 88%)`;
+      const cnt = () => Object.values(S.cart).reduce((a, b) => a + b, 0);
+      const rw = (a, b, x = "") =>
+        `<div class="row" style="justify-content:space-between;${x}"><span>${a}</span><b>${b}</b></div>`;
+      const T = (m) => {
+        const t = $("#toast");
+        t.textContent = m;
+        t.style.display = "block";
+        clearTimeout(T.t);
+        T.t = setTimeout(() => (t.style.display = "none"), 1800);
+      };
+      const tot = () => {
+        const s = Object.entries(S.cart).reduce(
+            (a, [i, q]) => a + P(i).p * q,
+            0,
+          ),
+          sh = s && s < 500 ? 40 : 0;
+        return { s, sh, t: s + sh };
+      };
+      const nav = (v) =>
+        location.hash.slice(1) == v ? R() : (location.hash = v);
+      const go = (v) => {
+        F.q = "";
+        $("#q").value = "";
+        nav(v);
+      };
+      const sch = () => {
+        F.q = $("#q").value.trim();
+        nav("shop");
+      };
+
+      // ===== 4) ตะกร้า / รายการโปรด / สมาชิก =====
+      const add = (id, n = 1) => {
+        const p = P(id);
+        if (!live(p)) return T("ร้านนี้ถูกระงับชั่วคราว");
+        const q = (S.cart[id] || 0) + (n || 1);
+        if (q > p.s) return T("สินค้าคงเหลือไม่พอ");
+        S.cart[id] = q;
+        sv();
+        hd();
+        T("เพิ่มลงตะกร้าแล้ว 🛒");
+      };
+      const qty = (id, d) => {
+        const q = (S.cart[id] || 0) + d;
+        if (q <= 0) delete S.cart[id];
+        else if (q > P(id).s) return T("เกินจำนวนสินค้าคงเหลือ");
+        else S.cart[id] = q;
+        sv();
+        R(1);
+      };
+      const fv = (id) => {
+        const i = S.fav.indexOf(id);
+        i < 0 ? S.fav.push(id) : S.fav.splice(i, 1);
+        sv();
+        R(1);
+      };
+      const out = () => {
+        S.me = null;
+        sv();
+        go("home");
+        T("ออกจากระบบแล้ว");
+      };
+      const auth = () => {
+        const e = $("#em").value.trim(),
+          p = $("#pw").value;
+        if (!e || !p) return T("กรอกอีเมลและรหัสผ่านให้ครบ");
+        if (reg) {
+          if (S.U.some((u) => u.e == e)) return T("อีเมลนี้ถูกใช้แล้ว");
+          const u = {
+            e,
+            p,
+            n: $("#un").value.trim() || e.split("@")[0],
+            r: "customer",
+          };
+          S.U.push(u);
+          S.me = u;
+          if ($("#rl").value == "seller")
+            mkShop(u, $("#sn").value.trim() || "ร้านของ " + u.n);
+        } else {
+          const u = S.U.find((u) => u.e == e && u.p == p);
+          if (!u) return T("อีเมลหรือรหัสผ่านไม่ถูกต้อง");
+          S.me = u;
+        }
+        sv();
+        T("ยินดีต้อนรับ " + S.me.n);
+        go(S.me.a ? "admin" : S.me.r == "seller" ? "seller" : "home");
+      };
+      const pay = () => {
+        const nm = $("#a1").value.trim(),
+          ph = $("#a2").value.trim(),
+          ad = $("#a3").value.trim();
+        if (!nm || !ph || !ad) return T("กรอกข้อมูลจัดส่งให้ครบ");
+        const t = tot(),
+          G = {};
+        Object.entries(S.cart).forEach(([i, q]) => {
+          const p = P(i);
+          p.s -= q;
+          p.d += q;
+          (G[p.sh] = G[p.sh] || []).push({
+            id: p.id,
+            n: p.n,
+            e: p.e,
+            p: p.p,
+            q,
+          });
+        });
+        const b = "FS" + Date.now().toString().slice(-8);
+        Object.entries(G).forEach(([sh, it], k) => {
+          const s = it.reduce((a, x) => a + x.p * x.q, 0),
+            f = k ? 0 : t.sh;
+          S.O.unshift({
+            id: b + String.fromCharCode(65 + k),
+            u: S.me.e,
+            sh,
+            s,
+            t: s + f,
+            it,
+            st: ST[0],
+            d: new Date().toISOString(),
+            nm,
+            ad,
+            pm: $("#pm").value,
+          });
+        });
+        S.cart = {};
+        sv();
+        T("สั่งซื้อสำเร็จ 🎉");
+        go("orders");
+      };
+
+      // ===== 5) ส่วนประกอบหน้าจอ =====
+      const card = (p) =>
+        `<div class="cd" onclick="go('product-${p.id}')" style="${hue(p.id)}"><div class="im">${pim(p)}</div>${p.o > p.p ? `<span class="tag">-${Math.round(100 - (p.p / p.o) * 100)}%</span>` : ""}<button class="hb" onclick="event.stopPropagation();fv(${p.id})">${S.fav.includes(p.id) ? "❤️" : "🤍"}</button><div class="p"><div class="nm">${E(p.n)}</div><div><span class="pr">${B(p.p)}</span>${p.o > p.p ? `<span class="old">${B(p.o)}</span>` : ""}</div><div class="sm"><a onclick="event.stopPropagation();go('store-${p.sh}')">🏪 ${E(sn(p.sh))}</a></div><div class="sm">⭐ ${p.r} · ขายแล้ว ${p.d}</div><button class="btn s" style="width:100%;margin-top:6px" onclick="event.stopPropagation();add(${p.id})">+ ใส่ตะกร้า</button></div></div>`;
+      const grid = (l) =>
+        `<div class="g">${l.map(card).join("") || "<p>ไม่พบสินค้า</p>"}</div>`;
+      const hd = () => {
+        $("#cb").textContent = cnt();
+        $("#us").textContent = S.me ? "👤 " + S.me.n : "👤 เข้าสู่ระบบ";
+        $("#nv").innerHTML =
+          `<a onclick="go('home')">หน้าแรก</a><a onclick="go('shop')">สินค้าทั้งหมด</a>` +
+          S.C.map(
+            (c) => `<a onclick="go('cat-${c.id}')">${c.i} ${E(c.n)}</a>`,
+          ).join("") +
+          (S.me?.a
+            ? `<a onclick="go('admin')" style="color:#ffd54f">⚙️ จัดการร้าน</a>`
+            : "") +
+          (S.me && !S.me.a
+            ? `<a onclick="go('seller')" style="color:#ffd54f">${S.me.r == "seller" ? "🏪 ร้านของฉัน" : "🏪 เปิดร้านขายของ"}</a>`
+            : "") +
+          `<a onclick="go('demo')">🎭 สาธิตบทบาท</a>` +
+          (S.me ? `<a onclick="out()">ออกจากระบบ</a>` : "");
+      };
+      const shop = (cid) => {
+        const q = F.q.toLowerCase();
+        let l = PL().filter(
+          (p) =>
+            (!cid || p.c == cid) &&
+            (!q ||
+              p.n.toLowerCase().includes(q) ||
+              sn(p.sh).toLowerCase().includes(q)) &&
+            (!F.min || p.p >= +F.min) &&
+            (!F.max || p.p <= +F.max) &&
+            p.r >= F.r,
+        );
+        l.sort(
+          {
+            pop: (a, b) => b.d - a.d,
+            lo: (a, b) => a.p - b.p,
+            hi: (a, b) => b.p - a.p,
+            new: (a, b) => b.id - a.id,
+            rt: (a, b) => b.r - a.r,
+          }[F.s],
+        );
+        return `<div class="w"><h2>${cid ? cg(cid).i + " " + E(cg(cid).n) : "สินค้าทั้งหมด"}${F.q ? ` · ค้นหา “${E(F.q)}”` : ""} (${l.length} รายการ)</h2><div class="box row"><select style="width:auto" onchange="F.s=this.value;R(1)">${[
+          ["pop", "ยอดนิยม"],
+          ["new", "ใหม่ล่าสุด"],
+          ["lo", "ราคาต่ำ → สูง"],
+          ["hi", "ราคาสูง → ต่ำ"],
+          ["rt", "คะแนนสูงสุด"],
+        ]
+          .map(
+            ([k, t]) =>
+              `<option value="${k}" ${F.s == k ? "selected" : ""}>${t}</option>`,
+          )
+          .join(
+            "",
+          )}</select><input type="number" style="width:120px" placeholder="ราคาต่ำสุด" value="${F.min}" onchange="F.min=this.value;R(1)"><input type="number" style="width:120px" placeholder="ราคาสูงสุด" value="${F.max}" onchange="F.max=this.value;R(1)"><label class="row"><input type="checkbox" style="width:auto" ${F.r ? "checked" : ""} onchange="F.r=this.checked?4:0;R(1)"> 4 ดาวขึ้นไป</label></div>${grid(l)}</div>`;
+      };
+      const ordList = (l) =>
+        l
+          .map(
+            (o) =>
+              `<div class="box"><div class="row" style="justify-content:space-between"><b>#${o.id}</b><span>🏪 ${E(sn(o.sh))}</span><span class="sm">${new Date(o.d).toLocaleString("th-TH")}</span></div>${o.it.map((i) => `<div>${i.e} ${E(i.n)} × ${i.q} — ${B(i.p * i.q)}</div>`).join("")}<div class="row" style="justify-content:space-between"><span>${E(o.pm)} · <b>${o.st}</b></span><b class="pr">${B(o.t)}</b></div></div>`,
+          )
+          .join("") || '<div class="box">ยังไม่มีคำสั่งซื้อ</div>';
+
+      // ===== 6) หน้าต่าง ๆ ของผู้ใช้ =====
+      const V = {};
+      V.shop = () => shop();
+      V.cat = (a) => shop(a);
+      V.home = () => {
+        const hot = [...PL()].sort((a, b) => b.d - a.d);
+        return `<div class="w"><div class="hero"><div class="bn" style="background:linear-gradient(120deg,#ee4d2d,#ff9a3d)"><h1 style="margin:0 0 6px">F Shop Mega Sale</h1><p>ลดสูงสุด 50% ส่งฟรีเมื่อซื้อครบ ฿500</p><button class="btn b" onclick="go('shop')">ช้อปเลย</button></div><div class="bn" style="background:linear-gradient(120deg,#1565c0,#42a5f5)"><h3 style="margin:0 0 6px">สมาชิกใหม่</h3><p>สมัครวันนี้ ติดตามคำสั่งซื้อได้ทุกขั้นตอน</p><button class="btn" onclick="go('seller')">🏪 เปิดร้านขายของ</button></div></div>
+<h2>หมวดหมู่สินค้า</h2><div class="cats">${S.C.map((c) => `<div class="ct" onclick="go('cat-${c.id}')"><span>${c.i}</span>${E(c.n)}</div>`).join("")}</div>
+<h2>🏪 ร้านค้าบน F Shop</h2><div class="tk">${S.SH.filter(
+          (s) => s.st != "suspended",
+        )
+          .map(
+            (s) =>
+              `<div class="ct" style="flex:0 0 150px" onclick="go('store-${s.id}')">${simg(s, 1)}<div style="margin-top:6px"><b>${E(s.n)}</b></div><div class="sm">${S.P.filter((p) => p.sh == s.id).length} สินค้า</div></div>`,
+          )
+          .join("")}</div>
+<h2>⚡ Flash Sale <span class="cdn" id="cd"></span></h2>${grid(
+          hot
+            .filter((p) => p.o > p.p)
+            .sort((a, b) => b.o / b.p - a.o / a.p)
+            .slice(0, 6),
+        )}
+<h2>🔥 วิดีโอสินค้ายอดฮิต</h2><div class="tk">${hot
+          .slice(0, 8)
+          .map(
+            (p) =>
+              `<div class="v" onclick="go('product-${p.id}')" style="background:linear-gradient(#111,hsl(${(p.id * 47) % 360} 45% 28%))"><i>▶ ${(p.d / 100).toFixed(1)}K</i>${p.e}<small>${E(p.n)}<br><b>${B(p.p)}</b></small></div>`,
+          )
+          .join("")}</div>
+<h2>แนะนำสำหรับคุณ</h2>${grid(PL().slice(0, 12))}</div>`;
+      };
+      V.product = (id) => {
+        const p = P(id);
+        if (!p || !live(p)) return V.home();
+        return `<div class="w"><div class="box"><div class="pd"><div class="im" style="${hue(p.id)};border-radius:8px;font-size:120px">${pim(p)}</div><div><div class="sm">${cg(p.c).i} ${E(cg(p.c).n)}</div><div class="sm" style="cursor:pointer" onclick="go('store-${p.sh}')">🏪 ร้าน <b>${E(sn(p.sh))}</b> · เข้าชมร้าน ›</div><h1 style="font-size:22px;margin:4px 0">${E(p.n)}</h1><div>⭐ ${p.r} · ขายแล้ว ${p.d} ชิ้น</div><div style="margin:10px 0"><span class="pr" style="font-size:28px">${B(p.p)}</span>${p.o > p.p ? `<span class="old">${B(p.o)}</span>` : ""}</div><p>${E(p.ds || "สินค้าคุณภาพดี ตรวจสอบก่อนจัดส่งทุกชิ้น รับประกันความพึงพอใจ")}</p><p class="sm">คงเหลือ ${p.s} ชิ้น · ส่งฟรีเมื่อซื้อครบ ฿500</p><div class="row"><input id="qt" type="number" min="1" max="${p.s}" value="1" style="width:80px"><button class="btn" onclick="add(${p.id},+$('#qt').value)">🛒 ใส่ตะกร้า</button><button class="btn b" onclick="add(${p.id},+$('#qt').value);go('cart')">ซื้อเลย</button><button class="btn g2" onclick="fv(${p.id})">${S.fav.includes(p.id) ? "❤️" : "🤍"}</button></div></div></div></div><h2>สินค้าที่เกี่ยวข้อง</h2>${grid(
+          PL()
+            .filter((x) => x.c == p.c && x.id != p.id)
+            .slice(0, 6),
+        )}</div>`;
+      };
+      V.fav = () =>
+        `<div class="w"><h2>❤️ สินค้าที่ชอบ</h2>${grid(PL().filter((p) => S.fav.includes(p.id)))}</div>`;
+      V.cart = () => {
+        const it = Object.entries(S.cart),
+          t = tot();
+        return `<div class="w"><h2>🛒 ตะกร้าสินค้า</h2>${
+          it.length
+            ? `<div class="box">${it
+                .map(([i, q]) => {
+                  const p = P(i);
+                  return `<div class="row" style="padding:8px 0;border-bottom:1px solid var(--l)"><span style="font-size:36px">${p.e}</span><div style="flex:1;min-width:140px">${E(p.n)}<br><span class="sm">🏪 ${E(sn(p.sh))}</span><br><b class="pr" style="font-size:14px">${B(p.p)}</b></div><div class="row"><button class="btn s g2" onclick="qty(${i},-1)">−</button><b>${q}</b><button class="btn s g2" onclick="qty(${i},1)">+</button></div><b style="width:80px;text-align:right">${B(p.p * q)}</b><button class="btn s g2" onclick="qty(${i},-999)">🗑️</button></div>`;
+                })
+                .join(
+                  "",
+                )}</div><div class="box">${rw("ราคาสินค้า", B(t.s))}${rw("ค่าจัดส่ง", t.sh ? B(t.sh) : "ฟรี")}${rw("ยอดรวม", B(t.t), "font-size:18px")}<button class="btn" style="width:100%;margin-top:10px" onclick="go(S.me?'checkout':'login')">ไปชำระเงิน</button></div>`
+            : `<div class="box">ตะกร้ายังว่างอยู่ <button class="btn" onclick="go('shop')">เลือกซื้อสินค้า</button></div>`
+        }</div>`;
+      };
+      V.login = () =>
+        `<div class="w"><div class="box" style="max-width:380px;margin:20px auto"><h2 style="margin-top:0">${reg ? "สมัครสมาชิก" : "เข้าสู่ระบบ"} F Shop</h2>${reg ? '<input id="un" placeholder="ชื่อ-นามสกุล"><br><br><select id="rl" onchange="rs(this.value)"><option value="customer">สมัครเป็นลูกค้า (ผู้ซื้อ)</option><option value="seller">สมัครเป็นผู้ขาย (เปิดร้านค้า)</option></select><br><br><div id="sw" style="display:none"><input id="sn" placeholder="ชื่อร้านค้าของคุณ"><br><br></div>' : ""}<input id="em" type="email" placeholder="อีเมล"><br><br><input id="pw" type="password" placeholder="รหัสผ่าน"><br><br><button class="btn" style="width:100%" onclick="auth()">${reg ? "สมัครสมาชิก" : "เข้าสู่ระบบ"}</button><p class="sm" style="cursor:pointer" onclick="reg=!reg;R(1)">${reg ? "มีบัญชีแล้ว? เข้าสู่ระบบ" : "ยังไม่มีบัญชี? สมัครสมาชิก"}</p><p class="sm">ทดลองฝั่งแอดมิน: admin@fshop.th / admin123</p><p class="sm">หรือกดเมนู “🎭 สาธิตบทบาท” ที่แถบด้านบน เพื่อสลับบทบาททันที</p></div></div>`;
+      V.checkout = () => {
+        if (!S.me) return V.login();
+        const t = tot();
+        if (!t.s) return V.cart();
+        return `<div class="w"><h2>💳 ชำระเงิน (จำลอง)</h2><div class="box"><div class="fl"><input id="a1" placeholder="ชื่อผู้รับ" value="${E(S.me.n)}"><input id="a2" placeholder="เบอร์โทร"></div><br><textarea id="a3" rows="3" placeholder="ที่อยู่จัดส่ง"></textarea><br><br><select id="pm"><option>โอนผ่าน QR Code</option><option>บัตรเครดิต/เดบิต</option><option>เก็บเงินปลายทาง</option></select></div><div class="box">${rw("ยอดสินค้า", B(t.s))}${rw("ค่าจัดส่ง", t.sh ? B(t.sh) : "ฟรี")}${rw("ยอดสุทธิ", B(t.t), "font-size:18px")}<button class="btn" style="width:100%;margin-top:10px" onclick="pay()">ยืนยันการสั่งซื้อ</button></div></div>`;
+      };
+      V.orders = () =>
+        S.me
+          ? `<div class="w"><h2>🧾 ประวัติคำสั่งซื้อ</h2>${ordList(S.O.filter((o) => o.u == S.me.e))}</div>`
+          : V.login();
+
+      // ===== 6.5) Marketplace หลายผู้ขาย: ร้านค้า / ผู้ขาย / บทบาท =====
+      const SHp = (id) => S.SH.find((s) => s.id == id),
+        sn = (id) => SHp(id)?.n || "F Shop",
+        live = (p) => SHp(p.sh)?.st != "suspended",
+        PL = () => S.P.filter(live);
+      const myShop = () => S.me && S.SH.find((s) => s.o == S.me.e),
+        can = (p) =>
+          !!(
+            p &&
+            S.me &&
+            (S.me.a || (S.me.r == "seller" && p.sh == myShop()?.id))
+          );
+      const pim = (p) => (p.img ? `<img src="${p.img}" alt="">` : p.e);
+      const simg = (s, m) =>
+        `<div class="sl${m ? " m" : ""}">${s.lg ? `<img src="${s.lg}" alt="">` : s.ic}</div>`;
+      const rd = (inp, cb) => {
+        const f = inp.files[0];
+        if (!f) return;
+        const fr = new FileReader();
+        fr.onload = () => {
+          const im = new Image();
+          im.onload = () => {
+            const k = Math.min(1, 640 / Math.max(im.width, im.height)),
+              c = document.createElement("canvas");
+            c.width = im.width * k;
+            c.height = im.height * k;
+            c.getContext("2d").drawImage(im, 0, 0, c.width, c.height);
+            cb(c.toDataURL("image/jpeg", 0.7));
+          };
+          im.src = fr.result;
+        };
+        fr.readAsDataURL(f);
+      };
+      const rs = (v) => ($("#sw").style.display = v == "seller" ? "" : "none");
+      const mkShop = (u, n) => {
+        const id = "sh" + Date.now();
+        S.SH.push({
+          id,
+          o: u.e,
+          n,
+          ds: "ยินดีต้อนรับสู่ร้านของเรา",
+          ic: "🏪",
+          st: "active",
+        });
+        S.SL.push({ e: u.e, sh: id });
+        u.r = "seller";
+        S.U.forEach((x) => {
+          if (x.e == u.e) x.r = "seller";
+        });
+        sv();
+      };
+      const becomeSeller = () => {
+        mkShop(S.me, "ร้านของ " + S.me.n);
+        SA = "set";
+        hd();
+        R(1);
+        T("เปิดร้านสำเร็จ 🎉 ตั้งชื่อและรูปร้านได้เลย");
+      };
+      const dl = (e) => {
+        S.me = S.U.find((u) => u.e == e);
+        sv();
+        T("สลับเป็น " + RL[S.me.r] + ": " + S.me.n);
+        go(S.me.a ? "admin" : S.me.r == "seller" ? "seller" : "home");
+      };
+      const ss = (id, v) => {
+        const p = P(id);
+        if (!can(p)) return T("จัดการได้เฉพาะสินค้าของร้านตัวเอง");
+        p.s = Math.max(0, +v || 0);
+        sv();
+        T("📦 อัปเดตจำนวนคงเหลือแล้ว");
+      };
+      const tg = (id) => {
+        if (!S.me?.a) return T("เฉพาะผู้ดูแลระบบ");
+        const s = SHp(id);
+        s.st = s.st == "suspended" ? "active" : "suspended";
+        sv();
+        R(1);
+        T(s.st == "suspended" ? "🔴 ระงับร้านแล้ว" : "🟢 เปิดใช้งานร้านแล้ว");
+      };
+      const shf = () => {
+        const s = myShop();
+        fm(
+          "ตั้งค่าร้านค้า",
+          [
+            ["n", "ชื่อร้านค้า", "text"],
+            ["lg", "รูปโปรไฟล์ร้าน", "img"],
+            ["cv", "รูปหน้าร้าน (ภาพปก)", "img"],
+            ["ic", "อีโมจิแทนโปรไฟล์ (ใช้เมื่อไม่มีรูป)", "text"],
+            ["ds", "รายละเอียดร้าน", "ta"],
+          ],
+          s,
+          (r) => {
+            if (!r.n) {
+              T("กรอกชื่อร้านค้า");
+              return false;
+            }
+            Object.assign(s, r);
+            sv();
+            hd();
+            R(1);
+            T("✅ บันทึกข้อมูลร้านแล้ว");
+          },
+        );
+      };
+      const bars = (D) => {
+        const m = Math.max(...D),
+          d = ["จ.", "อ.", "พ.", "พฤ.", "ศ.", "ส.", "อา."];
+        return `<div class="row" style="align-items:flex-end;flex-wrap:nowrap;margin-top:10px">${D.map((v, i) => `<div style="flex:1;text-align:center;font-size:11px"><div style="height:${Math.round((v / m) * 110)}px;background:var(--b);border-radius:4px 4px 0 0"></div>${d[i]}<br>${(v / 1000).toFixed(1)}k</div>`).join("")}</div>`;
+      };
+      V.store = (id) => {
+        const s = SHp(id);
+        if (!s) return V.home();
+        const l = S.P.filter((p) => p.sh == s.id),
+          sold = l.reduce((a, p) => a + p.d, 0);
+        return `<div class="w"><div class="bn" style="margin-top:12px;background:${s.cv ? `linear-gradient(#0002,#0009),url(${s.cv}) center/cover` : "linear-gradient(120deg,#131a22,#1565c0)"}"><div class="row">${simg(s)}<div><h1 style="margin:0;font-size:24px">${E(s.n)}</h1><div>${E(s.ds)}</div><div style="font-size:12px;opacity:.85">สินค้า ${l.length} รายการ · ขายแล้ว ${sold} ชิ้น ${s.st == "suspended" ? "· 🔴 ถูกระงับ" : ""}</div></div></div></div><h2>สินค้าของร้าน</h2>${s.st == "suspended" ? '<div class="box">ร้านนี้ถูกระงับชั่วคราวโดยผู้ดูแลระบบ</div>' : grid(l)}</div>`;
+      };
+      V.demo = () =>
+        `<div class="w"><h2>🎭 สาธิตบทบาท</h2><div class="box"><p>บทบาทปัจจุบัน: <b>${S.me ? RL[S.me.r] + " · " + E(S.me.n) : "ยังไม่ได้เข้าสู่ระบบ"}</b></p><p class="sm">เลือกบัญชีตัวอย่างเพื่อสลับบทบาททันที (รหัสผ่านบัญชีตัวอย่าง: ลูกค้า/ผู้ขาย = 1234, แอดมิน = admin123)</p><div class="row">${DM.map(
+          (e) => S.U.find((u) => u.e == e),
+        )
+          .filter(Boolean)
+          .map(
+            (u) =>
+              `<button class="btn ${u.r == "admin" ? "b" : u.r == "seller" ? "" : "g2"}" onclick="dl('${u.e}')">${RL[u.r]} · ${E(u.n)}</button>`,
+          )
+          .join("")}</div></div></div>`;
+      const SD = {
+        ov(s, m, od, ok) {
+          const rev = ok.reduce((a, o) => a + o.s, 0);
+          return `<div class="g" style="margin:12px 0">${[
+            ["💰 ยอดขายจริง", B(rev)],
+            ["🧾 คำสั่งซื้อ", od.length],
+            ["📦 สินค้าในร้าน", m.length],
+            ["⚠️ สต็อกใกล้หมด (≤5)", m.filter((p) => p.s <= 5).length],
+          ]
+            .map(
+              ([a, b]) =>
+                `<div class="box" style="margin:0"><div class="sm">${a}</div><b style="font-size:20px">${b}</b></div>`,
+            )
+            .join(
+              "",
+            )}</div><div class="box"><b>ยอดขายจำลอง 7 วัน</b>${bars([5, 8, 4, 10, 7, 12, 9].map((x) => x * (400 + m.length * 150)))}</div><div class="box"><b>สินค้าขายดีของร้าน</b>${
+            [...m]
+              .sort((a, b) => b.d - a.d)
+              .slice(0, 5)
+              .map(
+                (p, i) =>
+                  `<div>${i + 1}. ${p.e} ${E(p.n)} — ขายแล้ว ${p.d}</div>`,
+              )
+              .join("") || '<div class="sm">ยังไม่มีสินค้า</div>'
+          }</div>`;
+        },
+        pr(s, m) {
+          return `<div class="box"><button class="btn" onclick="pf()">+ เพิ่มสินค้า</button><div class="tb"><table><tr><th></th><th>ชื่อสินค้า</th><th>ราคา</th><th>คงเหลือ</th><th></th></tr>${m.map((p) => `<tr><td style="width:56px"><div class="sl m">${pim(p)}</div></td><td>${E(p.n)}</td><td>${B(p.p)}</td><td><input type="number" min="0" value="${p.s}" style="width:80px" onchange="ss(${p.id},this.value)"></td><td style="white-space:nowrap"><button class="btn s b" onclick="pf(${p.id})">แก้ไข</button> <button class="btn s g2" onclick="dp(${p.id})">ลบ</button></td></tr>`).join("")}</table></div>${m.length ? "" : '<p class="sm">ยังไม่มีสินค้า กดปุ่ม “+ เพิ่มสินค้า” เพื่อเริ่มขาย</p>'}</div>`;
+        },
+        od(s, m, od) {
+          return A.ord(od);
+        },
+        set(s) {
+          return `<div class="box row">${simg(s)}<div style="flex:1;min-width:180px"><b style="font-size:18px">${E(s.n)}</b><div class="sm">${E(s.ds)}</div></div><button class="btn" onclick="shf()">แก้ไขข้อมูลร้าน</button><button class="btn b" onclick="go('store-${s.id}')">ดูหน้าร้านจริง</button></div>`;
+        },
+      };
+      V.seller = () => {
+        if (!S.me) return V.login();
+        if (S.me.a) return V.admin();
+        const s = myShop();
+        if (!s)
+          return `<div class="w"><div class="box" style="max-width:480px;margin:20px auto;text-align:center"><h2>🏪 เปิดร้านค้าบน F Shop</h2><p>ลงสินค้าเอง จัดการสต็อกเอง รับคำสั่งซื้อ และดูยอดขายของร้านคุณ</p><button class="btn" onclick="becomeSeller()">เปิดร้านค้าของฉัน</button></div></div>`;
+        const m = S.P.filter((p) => p.sh == s.id),
+          od = S.O.filter((o) => o.sh == s.id),
+          ok = od.filter((o) => o.st != "ยกเลิก");
+        return `<div class="w"><div class="row" style="margin-top:12px">${simg(s, 1)}<h2 style="margin:0">Seller Dashboard · ${E(s.n)}</h2><span class="sm">${s.st == "suspended" ? "🔴 ร้านถูกระงับโดยผู้ดูแลระบบ" : "🟢 เปิดให้บริการ"}</span></div><div class="row" style="margin-top:10px">${[
+          ["ov", "📊 ภาพรวม"],
+          ["pr", "📦 สินค้าของฉัน"],
+          ["od", "🧾 คำสั่งซื้อของร้าน"],
+          ["set", "⚙️ ตั้งค่าร้าน"],
+        ]
+          .map(
+            ([k, t]) =>
+              `<button class="btn ${SA == k ? "" : "g2"}" onclick="SA='${k}';R(1)">${t}</button>`,
+          )
+          .join("")}</div>${SD[SA](s, m, od, ok)}</div>`;
+      };
+
+      // ===== 7) หน้าร้านค้า / ผู้ดูแลระบบ =====
+      const fm = (title, fs, v, ok) => {
+        fm.im = {};
+        const o = document.createElement("div");
+        o.className = "ov";
+        o.innerHTML = `<div class="box"><h2 style="margin-top:0">${title}</h2>${fs.map(([k, l, t, op]) => `<label class="sm">${l}</label>${t == "sel" ? `<select id="f_${k}">${op.map(([a, b]) => `<option value="${a}" ${v[k] == a ? "selected" : ""}>${E(b)}</option>`).join("")}</select>` : t == "img" ? `<input id="f_${k}" type="file" accept="image/*" onchange="rd(this,d=>{fm.im['${k}']=d;T('เลือกรูปแล้ว')})">${v[k] ? '<div class="sm">มีรูปอยู่แล้ว เลือกไฟล์ใหม่เพื่อเปลี่ยน</div>' : ""}` : t == "ta" ? `<textarea id="f_${k}" rows="3">${E(v[k])}</textarea>` : `<input id="f_${k}" type="${t}" value="${E(v[k])}">`}`).join("")}<br><div class="row"><button class="btn" id="ok">บันทึก</button><button class="btn g2" id="cx">ยกเลิก</button></div></div>`;
+        document.body.append(o);
+        $("#cx").onclick = () => o.remove();
+        $("#ok").onclick = () => {
+          const r = {};
+          fs.forEach(
+            ([k, , t]) =>
+              (r[k] =
+                t == "img"
+                  ? (fm.im[k] ?? v[k])
+                  : t == "number"
+                    ? +$("#f_" + k).value
+                    : $("#f_" + k).value.trim()),
+          );
+          if (ok(r) !== false) o.remove();
+        };
+      };
+      const pf = (id) => {
+        const p = id
+            ? P(id)
+            : { c: S.C[0]?.id, e: "📦", sh: myShop()?.id || S.SH[0]?.id },
+          adm = S.me?.a;
+        if (!S.me) return T("กรุณาเข้าสู่ระบบก่อน");
+        if (id && !can(p)) return T("แก้ไขได้เฉพาะสินค้าของร้านตัวเอง");
+        if (!id && !adm && !myShop())
+          return T("ต้องเปิดร้านก่อนจึงจะเพิ่มสินค้าได้");
+        if (!id && !adm && myShop().st == "suspended")
+          return T("ร้านถูกระงับ ไม่สามารถเพิ่มสินค้าได้");
+        fm(
+          id ? "แก้ไขสินค้า" : "เพิ่มสินค้าใหม่",
+          [
+            ["n", "ชื่อสินค้า", "text"],
+            ["img", "รูปภาพสินค้า (อัปโหลดไฟล์)", "img"],
+            ["e", "อีโมจิแทนรูป (ใช้เมื่อไม่มีรูป)", "text"],
+            ...(adm
+              ? [["sh", "ร้านค้า", "sel", S.SH.map((s) => [s.id, s.n])]]
+              : []),
+            ["c", "หมวดหมู่", "sel", S.C.map((c) => [c.id, c.n])],
+            ["p", "ราคาขาย (บาท)", "number"],
+            ["o", "ราคาเดิม (บาท)", "number"],
+            ["s", "จำนวนในสต็อก", "number"],
+            ["ds", "รายละเอียดสินค้า", "ta"],
+          ],
+          p,
+          (r) => {
+            if (!r.n || !(r.p > 0)) {
+              T("กรอกชื่อสินค้าและราคาให้ถูกต้อง");
+              return false;
+            }
+            r.o = r.o || r.p;
+            r.s = r.s || 0;
+            r.e = r.e || "📦";
+            id
+              ? Object.assign(p, r)
+              : S.P.unshift({ sh: p.sh, ...r, id: Date.now(), d: 0, r: 4.5 });
+            sv();
+            R(1);
+            T(
+              id
+                ? "✏️ แก้ไขสินค้าเรียบร้อย"
+                : "✅ เพิ่มสินค้าเรียบร้อย แสดงบน Marketplace แล้ว",
+            );
+          },
+        );
+      };
+      const dp = (id) => {
+        if (!can(P(id))) return T("ลบได้เฉพาะสินค้าของร้านตัวเอง");
+        S.P = S.P.filter((p) => p.id != id);
+        S.fav = S.fav.filter((i) => i != id);
+        sv();
+        R(1);
+        T("🗑️ ลบสินค้าเรียบร้อย");
+      };
+      const cf = (id) => {
+        const c = id ? S.C.find((c) => c.id == id) : { i: "🛍️" };
+        fm(
+          id ? "แก้ไขหมวดหมู่" : "เพิ่มหมวดหมู่",
+          [
+            ["n", "ชื่อหมวดหมู่", "text"],
+            ["i", "ไอคอน (อีโมจิ)", "text"],
+          ],
+          c,
+          (r) => {
+            if (!r.n) {
+              T("กรอกชื่อหมวดหมู่");
+              return false;
+            }
+            id ? Object.assign(c, r) : S.C.push({ ...r, id: "c" + Date.now() });
+            sv();
+            R(1);
+            T("บันทึกหมวดหมู่แล้ว");
+          },
+        );
+      };
+      const dc = (id) => {
+        if (S.P.some((p) => p.c == id))
+          return T("มีสินค้าในหมวดนี้ ย้ายหรือลบสินค้าก่อน");
+        S.C = S.C.filter((c) => c.id != id);
+        sv();
+        R(1);
+      };
+      const st = (id, v) => {
+        const o = S.O.find((o) => o.id == id);
+        if (!S.me?.a && o.sh != myShop()?.id)
+          return T("ไม่มีสิทธิ์จัดการคำสั่งซื้อของร้านอื่น");
+        o.st = v;
+        sv();
+        T("อัปเดตสถานะแล้ว");
+      };
+      const A = {
+        user() {
+          return `<div class="box tb"><table><tr><th>ชื่อ</th><th>อีเมล</th><th>บทบาท</th><th>ร้านค้า</th></tr>${S.U.map((u) => `<tr><td>${E(u.n)}</td><td>${E(u.e)}</td><td>${RL[u.r] || u.r}</td><td>${E(S.SH.find((s) => s.o == u.e)?.n || "-")}</td></tr>`).join("")}</table></div>`;
+        },
+        shop() {
+          return (
+            S.SH.map(
+              (s) =>
+                `<div class="box row">${simg(s, 1)}<div style="flex:1;min-width:170px"><b>${E(s.n)}</b> <span class="sm">${s.st == "suspended" ? "🔴 ถูกระงับ" : "🟢 เปิดใช้งาน"}</span><div class="sm">เจ้าของ: ${E(s.o)} · สินค้า ${S.P.filter((p) => p.sh == s.id).length} รายการ</div></div><button class="btn s b" onclick="go('store-${s.id}')">ดูร้าน</button><button class="btn s ${s.st == "suspended" ? "" : "g2"}" onclick="tg('${s.id}')">${s.st == "suspended" ? "เปิดใช้งาน" : "ระงับร้าน"}</button></div>`,
+            ).join("") || '<div class="box">ยังไม่มีร้านค้า</div>'
+          );
+        },
+        stat() {
+          const D = [12400, 18900, 9800, 22100, 17600, 26300, 15400],
+            d = ["จ.", "อ.", "พ.", "พฤ.", "ศ.", "ส.", "อา."],
+            rev = S.O.filter((o) => o.st != "ยกเลิก").reduce(
+              (a, o) => a + o.t,
+              0,
+            ),
+            m = Math.max(...D);
+          return `<div class="g" style="margin:12px 0">${[
+            ["💰 ยอดขายจากคำสั่งซื้อจริง", B(rev)],
+            ["🧾 คำสั่งซื้อทั้งหมด", S.O.length],
+            ["📦 สินค้า", S.P.length],
+            ["🏪 ร้านค้า", S.SH.length],
+            ["👥 สมาชิก", S.U.length],
+          ]
+            .map(
+              ([a, b]) =>
+                `<div class="box" style="margin:0"><div class="sm">${a}</div><b style="font-size:20px">${b}</b></div>`,
+            )
+            .join("")}</div>
+<div class="box"><b>ยอดขายจำลอง 7 วัน</b><div class="row" style="align-items:flex-end;flex-wrap:nowrap;margin-top:10px">${D.map((v, i) => `<div style="flex:1;text-align:center;font-size:11px"><div style="height:${Math.round((v / m) * 110)}px;background:var(--b);border-radius:4px 4px 0 0"></div>${d[i]}<br>${(v / 1000).toFixed(1)}k</div>`).join("")}</div></div>
+<div class="box"><b>สินค้าขายดี</b>${[...S.P]
+            .sort((a, b) => b.d - a.d)
+            .slice(0, 5)
+            .map(
+              (p, i) =>
+                `<div>${i + 1}. ${p.e} ${E(p.n)} — ขายแล้ว ${p.d}</div>`,
+            )
+            .join("")}</div>`;
+        },
+        prod() {
+          return `<div class="box"><button class="btn" onclick="pf()">+ เพิ่มสินค้าใหม่</button><div class="tb"><table><tr><th></th><th>ชื่อ</th><th>หมวด</th><th>ราคา</th><th>สต็อก</th><th></th></tr>${S.P.map((p) => `<tr><td>${p.e}</td><td>${E(p.n)}<div class="sm">🏪 ${E(sn(p.sh))}</div></td><td>${E(cg(p.c).n)}</td><td>${B(p.p)}</td><td>${p.s}</td><td style="white-space:nowrap"><button class="btn s b" onclick="pf(${p.id})">แก้ไข</button> <button class="btn s g2" onclick="dp(${p.id})">ลบ</button></td></tr>`).join("")}</table></div></div>`;
+        },
+        cat() {
+          return `<div class="box"><button class="btn" onclick="cf()">+ เพิ่มหมวดหมู่</button>${S.C.map((c) => `<div class="row" style="padding:8px 0;border-bottom:1px solid var(--l)"><span style="font-size:24px">${c.i}</span><span style="flex:1">${E(c.n)} <span class="sm">(${S.P.filter((p) => p.c == c.id).length} รายการ)</span></span><button class="btn s b" onclick="cf('${c.id}')">แก้ไข</button><button class="btn s g2" onclick="dc('${c.id}')">ลบ</button></div>`).join("")}</div>`;
+        },
+        ord(l = S.O) {
+          return (
+            l
+              .map(
+                (o) =>
+                  `<div class="box"><div class="row" style="justify-content:space-between"><b>#${o.id}</b><span class="sm">🏪 ${E(sn(o.sh))} · ${E(o.u)}</span><b>${B(o.t)}</b></div><div class="sm">${o.it.map((i) => E(i.n) + " ×" + i.q).join(", ")}</div><div class="sm">ส่งที่: ${E(o.nm)} · ${E(o.ad)}</div><select style="width:auto;margin-top:6px" onchange="st('${o.id}',this.value)">${ST.map((s) => `<option ${s == o.st ? "selected" : ""}>${s}</option>`).join("")}</select></div>`,
+              )
+              .join("") || '<div class="box">ยังไม่มีคำสั่งซื้อ</div>'
+          );
+        },
+      };
+      V.admin = () => {
+        if (!S.me?.a) return V.login();
+        return `<div class="w"><h2>⚙️ จัดการร้านค้า F Shop</h2><div class="row">${[
+          ["stat", "📊 สถิติ"],
+          ["user", "👥 ผู้ใช้"],
+          ["shop", "🏪 ร้านค้า"],
+          ["prod", "📦 สินค้า"],
+          ["cat", "🗂️ หมวดหมู่"],
+          ["ord", "🧾 คำสั่งซื้อ"],
+        ]
+          .map(
+            ([k, t]) =>
+              `<button class="btn ${AT == k ? "" : "g2"}" onclick="AT='${k}';R(1)">${t}</button>`,
+          )
+          .join("")}</div>${A[AT]()}</div>`;
+      };
+
+      // ===== 8) ระบบแสดงผลหน้า (Router ด้วย #hash) =====
+      function R(k) {
+        Object.keys(S.cart).forEach(
+          (i) => (P(i) && live(P(i))) || delete S.cart[i],
+        );
+        const [v, a] = (location.hash.slice(1) || "home").split("-");
+        hd();
+        $("#app").innerHTML = (V[v] || V.home)(a);
+        if (!k) scrollTo(0, 0);
+      }
+      addEventListener("hashchange", () => R());
+      setInterval(() => {
+        const e = $("#cd");
+        if (!e) return;
+        const n = new Date(),
+          m = new Date(n);
+        m.setHours(24, 0, 0, 0);
+        const s = Math.floor((m - n) / 1000);
+        e.textContent = [(s / 3600) | 0, ((s / 60) % 60) | 0, s % 60]
+          .map((x) => String(x).padStart(2, "0"))
+          .join(":");
+      }, 1000);
+      R();
+    </script>
+  </body>
+</html>
